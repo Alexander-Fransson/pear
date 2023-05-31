@@ -1,0 +1,61 @@
+@startuml ER-Diagram
+hide circle
+skinparam dpi 300
+skinparam shadowing false
+skinparam handwritten false
+skinparam monochrome true
+skinparam DefaultFontName xkcd Script
+skinparam classAttributeIconSize 0
+hide methods
+hide stereotype
+skinparam Linetype ortho
+
+entity User {
+  name : string
+  email : string
+  encryptedPassword : string
+  address : string
+  phone : integer
+  role : string
+}
+entity Product {
+    id : integer
+    name : string
+    description : string
+    price : integer
+    discount : decimal
+    category : string
+    amountInStorage : integer
+    weight : integer
+    dimensions : string
+}
+entity OptionGroup {
+    id: integer
+    type : string
+    optionId : integer[]
+    productId : integer
+}
+entity Option {
+    id : integer
+    type : string
+    name: string
+    price : integer
+}
+entity Order {
+    customerID : integer
+    totalPrice : integer
+    userAddress : string
+    orderDate : Date
+    status : string
+}
+entity LineItem {
+    orderId : integer
+    fullProduct : string
+    uri : string
+}
+
+Product "*" --- "1..*" OptionGroup
+OptionGroup "1" --- "1..*" Option
+Order "0..*" --- "1" User
+Order "1" --- "1..*" LineItem
+LineItem ... Product : copy item and options

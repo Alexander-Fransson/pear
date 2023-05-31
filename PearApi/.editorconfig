@@ -1,0 +1,29 @@
+# Configurates the rules for dotnet format.
+#  For more information check out https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/configuration-files.
+
+# (1) Specifies that the linter should begin searching from the directory of this file.
+# (2) Specifies that the linter should only lint c# files.
+# (3) Code rules. 
+#  For additional rules and information concerning code quality check out https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/code-quality-rule-options.
+#  For additional rules and information concerning code quality check out https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/code-style-rule-options.
+
+
+root = true # (1)
+
+[*.cs] # (2)
+
+# (3)
+
+indent_size = 3
+indent_style = space 
+tab_width = 3
+
+csharp_space_before_colon_in_inheritance_clause = true
+csharp_space_after_colon_in_inheritance_clause = true
+csharp_space_between_parentheses = false
+
+csharp_new_line_before_open_brace = all
+
+dotnet_naming_style.pascal_case_style.capitalization = pascal_case
+
+insert_final_newline = false

@@ -1,0 +1,12 @@
+{
+  "name": "PearApi",
+  "version": "1.0.0",
+  "description": "npm modules required for testing",
+  "main": "index.js",
+  "author": "Alexander Fransson",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "dredd": "^14.1.0"
+  }
+}

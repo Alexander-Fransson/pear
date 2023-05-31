@@ -1,0 +1,3 @@
+# Does not work for some reason, comment /*eslint-disable*/ if the linter bothers you to much.
+# You can also use the a . at the begining of a foldername to force the linter to ingnore the folder.
+# PS: dont abuse

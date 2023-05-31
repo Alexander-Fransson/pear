@@ -1,0 +1,47 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "strict": true,
+    "jsx": "preserve",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "lib": ["ESNext", "DOM"],
+    "skipLibCheck": true,
+    "noEmit": true,
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["./*"],
+      "@router": ["router", "router/*"],
+      "@stores/*": ["stores", "stores/*"],
+      "@views/*": ["views", "views/*"],
+      "@adminViews/*": ["views/adminViews", "views/adminViews/*"],
+      "@buisnessViews/*": ["views/buisnessViews", "views/buisnessViews/*"],
+      "@shopViews/*": ["views/shopViews", "views/shopViews/*"],
+      "@adminComponents/*": [
+        "components/adminComponents",
+        "components/adminComponents/*"
+      ],
+      "@buisnessComponents/*": ["components/buisnessComponents"],
+      "@generalComponents/*": ["components/generalComponents"],
+      "@shopComponents/*": ["components/shopComponents"]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "src/**/**/*.vue",
+    "src/**/*.d.ts",
+    "src/**/**/*.ts"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
+}

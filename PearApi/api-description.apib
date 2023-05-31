@@ -1,0 +1,35 @@
+FORMAT: 1A
+
+# PearApi
+## Options [/api/Option]
+### Get Options [GET]
++ Response 200 (application/json; charset=utf-8)
+### Create an Option [POST]
++ Request (application/json; charset=utf-8)
+
+    + Body 
+
+            {
+                "name": "string",
+                "type": "string",
+                "price": 0
+            }
++ Response 201
+
+## Specific Option [/api/Option/1]
+### Get Specific Option [GET]
++ Response 200
+### Put Specific Option [PUT]
++ Request (application/json; charset=utf-8)
+
+    + Body 
+
+            {
+                "id": 1,
+                "name": "string",
+                "type": "totaly not a string i am cerial",
+                "price": 0
+            }
++ Response 204
+### Delete Specific Option [DELETE] 
++ Response 204

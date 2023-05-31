@@ -1,0 +1,65 @@
+// Configuring eslint. 
+// For more information about eslint check out https://eslint.org/docs/latest/.
+
+// (1) Enviromental settings, if it is run on a browser and wich echma script verition its on.
+// (2) Choses the configutarion of the plugins and the base linter.
+// (3) Change the rules for certain files.
+// (4) Adapts eslint to read variations of echmascript. 
+//  If you want to lint something other than default javascipt it is specified here.
+//  There can only be one parser so if you want to lint f.ex boath typescript and vue you can mantion it in parser options.
+// (5) Plugin packages that adapts the eslint ruleset. 
+//  For information about how to create youre own plugin check out https://dev.to/devsmitra/how-to-create-a-custom-eslint-plugin-3bom.
+// (6) Path patterns that eslint should ignore, directories, files etc.
+// (7) Manualy chosen rules for eslint to follow. If you have plugins installed they may have rules that can conflict with youres.
+//  For a list of available rules check out https://eslint.org/docs/latest/rules/.
+// (8) A rule that lets you create custom rules by batterm matching the AST (Abstract Syntax Tree).
+//  For information about the rule check out https://eslint.org/docs/latest/rules/no-restricted-syntax.
+//  For information about the ASTree check out https://www.codeshiftcommunity.com/docs/understanding-asts/.
+//  To experiment with the ASTree check out https://astexplorer.net/. 
+
+{
+    "env": /*(1)*/ { 
+        "browser": true,
+        "es2021": true
+    },
+    "extends": /*(2)*/ [
+        "eslint:recommended",
+        "plugin:vue/vue3-essential",
+        "plugin:vue/base",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended"    
+    ],
+    "overrides": /*(3)*/ [
+
+    ],
+    /*(4)*/
+    "parser": "vue-eslint-parser",
+    "parserOptions": {
+        "parser": "@typescript-eslint/parser",
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": /*(5)*/ [
+        "vue",
+        "@typescript-eslint",
+        "prettier"
+    ],
+    "ignorePatterns": /*(6)*/ [
+        "vite-env.d.ts",
+        "assets",
+        "*css",
+        "*html",
+        "*.sass"
+    ],
+    "rules": /*(7)*/ {
+        "no-restricted-syntax": /*(8)*/ [
+            "error", {
+                "selector": "Identifier[name=/[a-z]+_+[a-z]*/]",
+                "message": "Variables must be in camelCase"
+            }
+        ]
+    },
+    "globals": {
+        "NodeJS": true
+    }
+}
